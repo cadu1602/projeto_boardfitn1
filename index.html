@@ -1,189 +1,124 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BoardFit — O seu Shaper Virtual</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BoardFit — O seu Shaper Virtual</title>
+<meta name="description" content="Informe peso, altura e nível e descubra a litragem e os modelos de prancha ideais para você.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Work+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- CABEÇALHO E NAVEGAÇÃO -->
-    <header class="header">
-        <div class="logo">
-            <h1>BoardFit</h1>
-            <p>O seu Shaper Virtual</p>
-        </div>
-        <nav class="nav">
-            <a href="#problema">O Problema</a>
-            <a href="#solucao">Recursos</a>
-            <a href="#como-funciona">Como Funciona</a>
-            <a href="#tipos">Pranchas</a>
-            <a href="#faq">FAQ</a>
-            <a href="#shaper">Calcular</a>
-        </nav>
-    </header>
-
-    <main class="container">
-
-        <section id="problema" class="card">
-            <h2>O problema não é você.<p> 
-            </p> É a prancha.</h2>
-            <p>Milhares de surfistas tentam evoluir, mas travam no mar porque estão usando um equipamento inadequado para seu peso, altura ou momento de evolução. Escolher a prancha errada gera frustração, cansaço e prejuízo financeiro.</p>
-        </section>
-
-        <section id="solucao" class="grid-recursos">
-            <div class="card">
-                <h3> Medidas Exatas</h3>
-                <p>Calcula a litragem ideal e define a largura, espessura e tamanho mais adequados para o seu corpo.</p>
-            </div>
-            <div class="card">
-                <h3> O Modelo Certo</h3>
-                <p>Recomenda o modelo exato (Softboard, Funboard, Fish ou Performance) para o seu momento no surf.</p>
-            </div>
-            <div class="card">
-                <h3> Quilhas Ideais</h3>
-                <p>Sugere o conjunto de quilhas ideal para acompanhar sua nova prancha.</p>
-            </div>
-        </section>
-
-        <section id="tipos" class="card">
-            <h2>Modelos Analisados pelo Shaper</h2>
-            <div class="grid-recursos">
-                <div class="card card-mini">
-                    <h4> Softboard / Longboard</h4>
-                    <p><strong>Ideal para:</strong> Iniciantes que buscam estabilidade e facilidade na remada.</p>
-                </div>
-                <div class="card card-mini">
-                    <h4> Funboard / Evolutiva</h4>
-                    <p><strong>Ideal para:</strong> Quem está transicionando e quer acertar mais manobras.</p>
-                </div>
-                <div class="card card-mini">
-                    <h4> Shortboard / Performance</h4>
-                    <p><strong>Ideal para:</strong> Surfistas avançados que buscam velocidade e manobras radicais.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="como-funciona" class="card">
-
-            <h2>Como Funciona o BoardFit?</h2>
-
-            <div class="passos-grid">
-
-                <div class="passo">
-
-                    <span class="numero-passo">1</span>
-
-                    <h4>Informe seus Dados</h4>
-
-                    <p>Preencha seu peso, altura e frequência na água.</p>
-
-                </div>
-
-                <div class="passo">
-
-                    <span class="numero-passo">2</span>
-
-                    <h4>Algoritmo de Litragem</h4>
-
-                    <p>Calculamos o volume ideal para sua flutuação.</p>
-
-                </div>
-
-                <div class="passo">
-
-                    <span class="numero-passo">3</span>
-
-                    <h4>Receba o Diagnóstico</h4>
-
-                    <p>Veja as especificações para levar ao shaper.</p>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <section id="shaper" class="card">
-
-            <h2>Descubra sua Prancha Perfeita</h2>
-
-            <form id="form-boardfit">
-
-                <div class="campo-form">
-
-                    <label for="peso">Seu Peso (kg):</label>
-
-                    <input type="number" id="peso" placeholder="Ex: 75" min="30" max="150" required>
-
-                </div>
-
-
-                <div class="campo-form">
-
-                    <label for="altura">Sua Altura (cm):</label>
-
-                    <input type="number" id="altura" placeholder="Ex: 175" min="100" max="220" required>
-
-                </div>
-
-
-                <div class="campo-form">
-
-                    <label for="nivel">Nível de Surf:</label>
-
-                    <select id="nivel" required>
-
-                        <option value="">Selecione seu nível atual...</option>
-
-                        <option value="iniciante">Iniciante (Saindo do Softboard)</option>
-
-                        <option value="intermediario">Em Evolução (Transição)</option>
-
-                        <option value="avancado">Avançado</option>
-
-                    </select>
-
-                </div>
-
-
-                <button type="submit" class="btn-calcular">Calcular Recomendação</button>
-
-            </form>
-
-        </section>
-
-
-        <section id="faq" class="card">
-
-            <h2>Perguntas Frequentes</h2>
-
-            <details class="faq-item">
-
-                <summary><strong>O que é litragem de uma prancha?</strong></summary>
-
-                <p>A litragem é o volume interno da prancha. Ela determina o quanto a prancha vai flutuar com você na água.</p>
-
-            </details>
-
-            <details class="faq-item">
-
-                <summary><strong>Por que o peso influencia tanto?</strong></summary>
-
-                <p>Quanto maior o peso, maior precisa ser a flutuação para não afundar ao remar e entrar na onda facilmente.</p>
-
-            </details>
-
-        </section>
-
-
-
-    <footer class="footer">
-        <p>BoardFit &copy; 2026 — Projeto N1</p>
-        <p><small>Desenvolvido por Carlos Eduardo, Caio Marçal, Matheus Nikolay e Simon Pais.</small></p>
-    </footer>
-
+<header class="header">
+  <div class="container header__row">
+    <span class="logo">BoardFit</span>
+    <nav class="nav">
+      <a href="#problema">O problema</a>
+      <a href="#funciona">Como funciona</a>
+      <a href="#calculadora">Calculadora</a>
+      <a href="#salvas">Minhas pranchas</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="container">
+    <p class="tag">Shaper virtual</p>
+    <h1>Você não tem uma prancha ruim. Tem a prancha errada.</h1>
+    <p class="hero__text">
+      Informe peso, altura e nível de surf. O BoardFit calcula a litragem ideal
+      e mostra os modelos de prancha que combinam com você.
+    </p>
+    <a href="#calculadora" class="btn">Descobrir minha prancha</a>
+  </div>
+</section>
+
+<section class="section section--dark" id="problema">
+  <div class="container">
+    <h2>O problema</h2>
+    <p>
+      Muitos surfistas em evolução não sabem relacionar peso, altura e nível de
+      experiência com a litragem e o modelo ideais de uma prancha. A compra acaba
+      vindo de indicação de vendedor ou de amigo — e o resultado é dinheiro
+      desperdiçado e meses de frustração dentro d'água.
+    </p>
+  </div>
+</section>
+
+<section class="section" id="funciona">
+  <div class="container">
+    <h2>Como funciona</h2>
+    <ol class="steps">
+      <li><strong>Informe seus dados.</strong> Peso, altura e nível de surf, sem cadastro.</li>
+      <li><strong>O BoardFit calcula.</strong> Cruza os dados e define a litragem ideal.</li>
+      <li><strong>Você vê os modelos.</strong> Até 3 pranchas compatíveis, com a quilha recomendada.</li>
+      <li><strong>Salve os favoritos.</strong> Guarde os modelos que gostou para levar à loja.</li>
+    </ol>
+  </div>
+</section>
+
+<section class="section section--sand" id="calculadora">
+  <div class="container">
+    <h2>Calcule a sua prancha ideal</h2>
+
+    <form class="calc-form" id="calc-form" novalidate>
+      <div class="field">
+        <label for="peso">Peso (kg)</label>
+        <input type="number" id="peso" placeholder="Ex: 70">
+        <span class="erro" id="erro-peso"></span>
+      </div>
+
+      <div class="field">
+        <label for="altura">Altura (cm)</label>
+        <input type="number" id="altura" placeholder="Ex: 175">
+        <span class="erro" id="erro-altura"></span>
+      </div>
+
+      <div class="field">
+        <label for="nivel">Nível de surf</label>
+        <select id="nivel">
+          <option value="">Selecione</option>
+          <option value="iniciante">Iniciante</option>
+          <option value="intermediario">Em evolução</option>
+          <option value="avancado">Avançado</option>
+        </select>
+        <span class="erro" id="erro-nivel"></span>
+      </div>
+
+      <div class="botoes">
+        <button type="submit" class="btn">Calcular minha prancha</button>
+        <button type="reset" class="btn btn--contorno">Limpar</button>
+      </div>
+    </form>
+
+    <div class="resultado" id="resultado"></div>
+  </div>
+</section>
+
+<section class="section" id="salvas">
+  <div class="container">
+    <h2>Minhas pranchas</h2>
+    <p class="intro">Os modelos que você salvar ficam guardados neste navegador.</p>
+    <p class="aviso-salvas" id="aviso-salvas" role="status"></p>
+    <div id="lista-salvas"></div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <p class="logo logo--footer">BoardFit</p>
+    <p class="footer__credit">
+      Projeto da disciplina PMI II — Modelagem Computacional Ágil, ADS21 / UNICESUSC.<br>
+      Caio Marçal · Simon Pais · Matheus Nicolai · Carlos Eduardo · Vitor Campos · Leandro L. Batista
+    </p>
+  </div>
+</footer>
+
+<script src="app.js"></script>
 </body>
 </html>
+
