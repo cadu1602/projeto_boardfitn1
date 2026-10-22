@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora — BoardFit</title>
+<meta name="description" content="Calcule a litragem ideal e veja até 3 modelos de prancha compatíveis com seu peso, altura e nível.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Work+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="container header__row">
+    <a href="index.html" class="logo">BoardFit</a>
+    <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav" id="menu">
+      <a href="index.html">Início</a>
+      <a href="index.html#funciona">Como funciona</a>
+      <a href="index.html#modelos">Modelos</a>
+      <a href="index.html#faq">Dúvidas</a>
+      <a href="calculadora.html" class="ativo">Calculadora</a>
+      <a href="#salvas">Minhas pranchas</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero hero--curto">
+  <div class="container">
+    <p class="tag">Calculadora</p>
+    <h1>Descubra a sua prancha ideal</h1>
+    <p class="hero__text">
+      Preencha os três campos abaixo e veja até 3 modelos compatíveis, com litragem,
+      medidas e quilha.
+    </p>
+  </div>
+</section>
+
+<section class="section section--sand" id="calculadora">
+  <div class="container">
+    <h2>Seus dados</h2>
+
+    <div class="calc-layout">
+      <form class="calc-form" id="calc-form" novalidate>
+        <div class="field">
+          <label for="peso">Peso (kg)</label>
+          <input type="number" id="peso" placeholder="Ex: 70">
+          <span class="erro" id="erro-peso"></span>
+        </div>
+
+        <div class="field">
+          <label for="altura">Altura (cm)</label>
+          <input type="number" id="altura" placeholder="Ex: 175">
+          <span class="erro" id="erro-altura"></span>
+        </div>
+
+        <div class="field">
+          <label for="nivel">Nível de surf</label>
+          <select id="nivel">
+            <option value="">Selecione</option>
+            <option value="iniciante">Iniciante</option>
+            <option value="intermediario">Em evolução</option>
+            <option value="avancado">Avançado</option>
+          </select>
+          <span class="erro" id="erro-nivel"></span>
+        </div>
+
+        <div class="botoes">
+          <button type="submit" class="btn">Calcular minha prancha</button>
+          <button type="reset" class="btn btn--contorno">Limpar</button>
+        </div>
+      </form>
+
+      <div class="calc-saida">
+        <div class="resultado" id="resultado"></div>
+
+        <!-- some sozinho quando o resultado aparece (ver style.css) -->
+        <div class="resultado-vazio">
+          <svg viewBox="0 0 200 60" aria-hidden="true" focusable="false">
+            <path d="M4 30 C40 10 110 6 160 10 C188 13 196 22 196 30 C196 38 188 47 160 50 C110 54 40 50 4 30Z"/>
+            <line x1="14" y1="30" x2="186" y2="30"/>
+          </svg>
+          <h3>Seus resultados aparecerão aqui</h3>
+          <p>Preencha o formulário e clique em “Calcular minha prancha” para ver até 3 modelos compatíveis.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="salvas">
+  <div class="container">
+    <h2>Minhas pranchas</h2>
+    <p class="intro">Os modelos que você salvar ficam guardados neste navegador.</p>
+    <p class="aviso-salvas" id="aviso-salvas" role="status"></p>
+    <div id="lista-salvas"></div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <p class="logo logo--footer">BoardFit</p>
+    <p class="footer__credit">
+      Projeto Universitário · ADS21 · UNICESUSC.<br>
+      Caio Marçal · Simon Pais · Matheus Nicolai · Carlos Eduardo
+    </p>
+  </div>
+</footer>
+
+<script src="menu.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
