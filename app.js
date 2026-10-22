@@ -1,4 +1,4 @@
-// BoardFit — calculadora de prancha (Sprint 2)
+// BoardFit — calculadora de prancha 
 // Fluxo: usuário informa peso, altura e nível -> calculamos a litragem
 // -> mostramos até 3 modelos compatíveis -> ele pode salvar os que gostar.
 
@@ -32,19 +32,19 @@ var NOME_NIVEL = {
 var MODELOS = [
   { nome: 'Softboard', mult: 1.25, min: 30, max: 90, niveis: ['iniciante'],
     fc: 1.3, larg: [22, 24], esp: [2.9, 3.4], borda: 'grossa e arredondada (mais estável)',
-    quilha: 'Single fin', descricao: 'Prancha de espuma, bem estável. Ideal para começar.' },
+    quilha: 'Tri-fin', descricao: 'Prancha de espuma, bem estável. Ideal para começar.' },
   { nome: 'Longboard', mult: 1.35, min: 40, max: 80, niveis: ['iniciante', 'intermediario'],
     fc: 1.55, larg: [22.5, 23.5], esp: [2.75, 3.1], borda: 'média, arredondada',
     quilha: 'Single fin', descricao: 'Comprida e com muita flutuação. Rema fácil e pega onda cedo.' },
   { nome: 'Funboard', mult: 1.1, min: 32, max: 60, niveis: ['iniciante', 'intermediario'],
     fc: 1.25, larg: [21.5, 22.5], esp: [2.5, 2.9], borda: 'média',
-    quilha: 'Single fin ou Tri-fin', descricao: 'Volumosa e fácil de remar. Boa para evoluir.' },
+    quilha: 'Single fin / Tri-fin', descricao: 'Volumosa e fácil de remar. Boa para evoluir.' },
   { nome: 'Evolution / Híbrida', mult: 1.0, min: 28, max: 42, niveis: ['intermediario', 'avancado'],
     fc: 1.1, larg: [20.25, 21.25], esp: [2.4, 2.6], borda: 'média',
     quilha: 'Tri-fin', descricao: 'Meio-termo entre funboard e shortboard.' },
   { nome: 'Fish', mult: 0.95, min: 26, max: 42, niveis: ['intermediario', 'avancado'],
     fc: 0.97, larg: [20.5, 22], esp: [2.3, 2.6], borda: 'média',
-    quilha: 'Twin ou Quad', descricao: 'Curta e larga. Rápida em ondas pequenas.' },
+    quilha: 'Twin / Quad / Tri-fin', descricao: 'Curta e larga. Rápida em ondas pequenas.' },
   { nome: 'Shortboard', mult: 0.85, min: 20, max: 36, niveis: ['avancado'],
     fc: 1.03, larg: [18.5, 19.75], esp: [2.1, 2.4], borda: 'fina (mais manobrável)',
     quilha: 'Tri-fin', descricao: 'Prancha de performance para manobras radicais.' }
