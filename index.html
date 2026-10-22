@@ -11,14 +11,29 @@
 </head>
 <body>
 
+<!-- gradiente reutilizado pelas ilustrações de prancha -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="gPrancha" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1FB5B0"/>
+      <stop offset="1" stop-color="#13406E"/>
+    </linearGradient>
+  </defs>
+</svg>
+
 <header class="header">
   <div class="container header__row">
-    <span class="logo">BoardFit</span>
-    <nav class="nav">
+    <a href="index.html" class="logo">BoardFit</a>
+    <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav" id="menu">
+      <a href="index.html" class="ativo">Início</a>
       <a href="#problema">O problema</a>
       <a href="#funciona">Como funciona</a>
-      <a href="#calculadora">Calculadora</a>
-      <a href="#salvas">Minhas pranchas</a>
+      <a href="#modelos">Modelos</a>
+      <a href="#faq">Dúvidas</a>
+      <a href="calculadora.html">Calculadora</a>
     </nav>
   </div>
 </header>
@@ -32,14 +47,35 @@
       Informe peso, altura e nível de surf. O BoardFit calcula a litragem ideal
       e mostra os modelos de prancha que combinam com você.
     </p>
-    <a href="#calculadora" class="btn">Descobrir minha prancha</a>
+    <div class="hero__botoes">
+      <a href="calculadora.html" class="btn">Descobrir minha prancha</a>
+      <a href="#funciona" class="btn btn--claro">Como funciona</a>
+    </div>
+
+    <!-- ilustração decorativa -->
+    <svg class="hero__arte" viewBox="0 0 220 480" aria-hidden="true" focusable="false">
+      <defs>
+        <linearGradient id="gHero" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#FF8A78"/>
+          <stop offset="1" stop-color="#D6402B"/>
+        </linearGradient>
+      </defs>
+      <circle cx="26" cy="70" r="7" fill="#14A3A0" opacity=".55"/>
+      <circle cx="198" cy="150" r="5" fill="#14A3A0" opacity=".45"/>
+      <circle cx="18" cy="260" r="4" fill="#fff" opacity=".35"/>
+      <circle cx="204" cy="330" r="8" fill="#14A3A0" opacity=".4"/>
+      <path d="M110 8 C165 95 182 260 164 390 C158 436 136 466 110 472 C84 466 62 436 56 390 C38 260 55 95 110 8 Z" fill="url(#gHero)"/>
+      <path d="M62 318 C92 334 128 334 158 318 L161 342 C130 358 90 358 59 342 Z" fill="#14A3A0"/>
+      <line x1="110" y1="44" x2="110" y2="452" stroke="#fff" stroke-opacity=".55" stroke-width="3" stroke-linecap="round"/>
+      <path d="M96 430 L110 456 L124 430 Z" fill="#0B2545" opacity=".85"/>
+    </svg>
   </div>
 </section>
 
-<section class="section section--dark" id="problema">
+<section class="section" id="problema">
   <div class="container">
     <h2>O problema</h2>
-    <p>
+    <p class="intro intro--largo">
       Muitos surfistas em evolução não sabem relacionar peso, altura e nível de
       experiência com a litragem e o modelo ideais de uma prancha. A compra acaba
       vindo de indicação de vendedor ou de amigo — e o resultado é dinheiro
@@ -48,7 +84,7 @@
   </div>
 </section>
 
-<section class="section" id="funciona">
+<section class="section section--sand" id="funciona">
   <div class="container">
     <h2>Como funciona</h2>
     <ol class="steps">
@@ -60,50 +96,153 @@
   </div>
 </section>
 
-<section class="section section--sand" id="calculadora">
+<section class="section" id="modelos">
   <div class="container">
-    <h2>Calcule a sua prancha ideal</h2>
+    <h2>Guia dos modelos de prancha</h2>
+    <p class="intro intro--largo">
+      Cada estilo de prancha tem um volume e um comportamento diferentes. Conheça os seis
+      modelos que o BoardFit considera no cálculo.
+    </p>
 
-    <form class="calc-form" id="calc-form" novalidate>
-      <div class="field">
-        <label for="peso">Peso (kg)</label>
-        <input type="number" id="peso" placeholder="Ex: 70">
-        <span class="erro" id="erro-peso"></span>
-      </div>
+    <div class="tipos">
+      <article class="tipo">
+        <div class="tipo__arte">
+          <svg viewBox="0 0 200 60" style="width:86%" aria-hidden="true" focusable="false">
+            <path d="M6 30 C6 14 50 8 100 8 C150 8 194 16 194 30 C194 44 150 52 100 52 C50 52 6 46 6 30Z"/>
+            <line x1="16" y1="30" x2="184" y2="30"/>
+          </svg>
+        </div>
+        <h3>Softboard</h3>
+        <p>Prancha de espuma, bem estável. Ideal para começar.</p>
+        <div class="chips"><span class="chip">Iniciante</span></div>
+        <p class="tipo__quilha">Quilha: Tri-fin</p>
+      </article>
 
-      <div class="field">
-        <label for="altura">Altura (cm)</label>
-        <input type="number" id="altura" placeholder="Ex: 175">
-        <span class="erro" id="erro-altura"></span>
-      </div>
+      <article class="tipo">
+        <div class="tipo__arte">
+          <svg viewBox="0 0 200 60" style="width:100%" aria-hidden="true" focusable="false">
+            <path d="M6 30 C6 14 50 8 100 8 C150 8 194 16 194 30 C194 44 150 52 100 52 C50 52 6 46 6 30Z"/>
+            <line x1="16" y1="30" x2="184" y2="30"/>
+          </svg>
+        </div>
+        <h3>Longboard</h3>
+        <p>Comprida e com muita flutuação. Rema fácil e pega onda cedo.</p>
+        <div class="chips"><span class="chip">Iniciante</span><span class="chip">Em evolução</span></div>
+        <p class="tipo__quilha">Quilha: Single fin</p>
+      </article>
 
-      <div class="field">
-        <label for="nivel">Nível de surf</label>
-        <select id="nivel">
-          <option value="">Selecione</option>
-          <option value="iniciante">Iniciante</option>
-          <option value="intermediario">Em evolução</option>
-          <option value="avancado">Avançado</option>
-        </select>
-        <span class="erro" id="erro-nivel"></span>
-      </div>
+      <article class="tipo">
+        <div class="tipo__arte">
+          <svg viewBox="0 0 200 60" style="width:74%" aria-hidden="true" focusable="false">
+            <path d="M4 30 C40 10 110 6 160 10 C188 13 196 22 196 30 C196 38 188 47 160 50 C110 54 40 50 4 30Z"/>
+            <line x1="14" y1="30" x2="186" y2="30"/>
+          </svg>
+        </div>
+        <h3>Funboard</h3>
+        <p>Volumosa e fácil de remar. Boa para evoluir.</p>
+        <div class="chips"><span class="chip">Iniciante</span><span class="chip">Em evolução</span></div>
+        <p class="tipo__quilha">Quilha: Single fin / Tri-fin</p>
+      </article>
 
-      <div class="botoes">
-        <button type="submit" class="btn">Calcular minha prancha</button>
-        <button type="reset" class="btn btn--contorno">Limpar</button>
-      </div>
-    </form>
+      <article class="tipo">
+        <div class="tipo__arte">
+          <svg viewBox="0 0 200 60" style="width:66%" aria-hidden="true" focusable="false">
+            <path d="M4 30 C40 10 110 6 160 10 C188 13 196 22 196 30 C196 38 188 47 160 50 C110 54 40 50 4 30Z"/>
+            <line x1="14" y1="30" x2="186" y2="30"/>
+          </svg>
+        </div>
+        <h3>Evolution / Híbrida</h3>
+        <p>Meio-termo entre funboard e shortboard.</p>
+        <div class="chips"><span class="chip">Em evolução</span><span class="chip">Avançado</span></div>
+        <p class="tipo__quilha">Quilha: Tri-fin</p>
+      </article>
 
-    <div class="resultado" id="resultado"></div>
+      <article class="tipo">
+        <div class="tipo__arte">
+          <svg viewBox="0 0 200 60" style="width:58%" aria-hidden="true" focusable="false">
+            <path d="M10 30 C50 8 120 4 170 12 C184 15 192 20 194 22 L178 30 L194 38 C192 40 184 45 170 48 C120 56 50 52 10 30Z"/>
+            <line x1="20" y1="30" x2="172" y2="30"/>
+          </svg>
+        </div>
+        <h3>Fish</h3>
+        <p>Curta e larga. Rápida em ondas pequenas.</p>
+        <div class="chips"><span class="chip">Em evolução</span><span class="chip">Avançado</span></div>
+        <p class="tipo__quilha">Quilha: Twin / Quad / Tri-fin</p>
+      </article>
+
+      <article class="tipo">
+        <div class="tipo__arte">
+          <svg viewBox="0 0 200 60" style="width:70%" aria-hidden="true" focusable="false">
+            <path d="M4 30 C50 19 120 17 165 20 C186 22 195 26 195 30 C195 34 186 38 165 40 C120 43 50 41 4 30Z"/>
+            <line x1="14" y1="30" x2="185" y2="30"/>
+          </svg>
+        </div>
+        <h3>Shortboard</h3>
+        <p>Prancha de performance para manobras radicais.</p>
+        <div class="chips"><span class="chip">Avançado</span></div>
+        <p class="tipo__quilha">Quilha: Tri-fin</p>
+      </article>
+    </div>
   </div>
 </section>
 
-<section class="section" id="salvas">
+<section class="section section--sand" id="recebe">
   <div class="container">
-    <h2>Minhas pranchas</h2>
-    <p class="intro">Os modelos que você salvar ficam guardados neste navegador.</p>
-    <p class="aviso-salvas" id="aviso-salvas" role="status"></p>
-    <div id="lista-salvas"></div>
+    <h2>O que você recebe</h2>
+    <div class="grade-info">
+      <div class="info-card">
+        <h3>Litragem certa</h3>
+        <p>Cada estilo de prancha tem um volume diferente, então cada modelo mostra a sua própria litragem.</p>
+      </div>
+      <div class="info-card">
+        <h3>Medidas completas</h3>
+        <p>Tamanho, largura, espessura e borda, em pés/polegadas e em centímetros.</p>
+      </div>
+      <div class="info-card">
+        <h3>Quilha recomendada</h3>
+        <p>Para cada modelo, a configuração de quilha que costuma funcionar melhor.</p>
+      </div>
+      <div class="info-card">
+        <h3>Minhas pranchas</h3>
+        <p>Salve os modelos que gostou, escreva anotações e leve a lista para a loja.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="faq">
+  <div class="container">
+    <h2>Perguntas frequentes</h2>
+    <div class="faq">
+      <details>
+        <summary>O que é litragem?</summary>
+        <p>A litragem indica o volume da prancha, medido em litros. Quanto maior o volume, maior a flutuação, o que facilita a remada e a pegada das ondas. Pranchas de maior performance costumam ter menos volume.</p>
+      </details>
+      <details>
+        <summary>Como o BoardFit calcula a litragem?</summary>
+        <p>O cálculo parte do peso, aplica um fator conforme o nível de surf e faz um ajuste pela altura. Em seguida, cada estilo de prancha recebe um multiplicador próprio, já que modelos diferentes têm volumes diferentes. A mesma entrada sempre gera o mesmo resultado.</p>
+      </details>
+      <details>
+        <summary>Preciso fazer cadastro?</summary>
+        <p>Não. Basta informar peso, altura e nível de surf. As pranchas que você salvar ficam guardadas apenas no seu navegador.</p>
+      </details>
+      <details>
+        <summary>O resultado substitui a opinião de um shaper?</summary>
+        <p>Não. Os fatores e as faixas de litragem são valores de partida e devem ser confirmados com um shaper antes da compra. O BoardFit serve como ponto de partida para essa conversa.</p>
+      </details>
+      <details>
+        <summary>Por que são mostrados até três modelos?</summary>
+        <p>Para permitir a comparação. Em vez de uma única resposta, você vê opções compatíveis com o seu nível e escolhe a que combina com o seu estilo de surf.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="section section--dark cta">
+  <div class="container">
+    <h2>Pronto para achar a sua?</h2>
+    <p>Leva menos de um minuto e não precisa de cadastro.</p>
+    <a href="calculadora.html" class="btn">Abrir a calculadora</a>
   </div>
 </section>
 </main>
@@ -112,13 +251,12 @@
   <div class="container">
     <p class="logo logo--footer">BoardFit</p>
     <p class="footer__credit">
-      Projeto da disciplina PMI II — Modelagem Computacional Ágil, ADS21 / UNICESUSC.<br>
-      Caio Marçal · Simon Pais · Matheus Nicolai · Carlos Eduardo · Vitor Campos · Leandro L. Batista
+      Projeto Universitário · ADS21 · UNICESUSC.<br>
+      Caio Marçal · Simon Pais · Matheus Nicolai · Carlos Eduardo
     </p>
   </div>
 </footer>
 
-<script src="app.js"></script>
+<script src="menu.js"></script>
 </body>
 </html>
-
